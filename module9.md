@@ -14,10 +14,31 @@ Algorithm:
 Program:
 
 //type your code here
+```
+#include<stdio.h>
+char stack[100];
+int top;
+void display()
+
+{
+    if(top==-1)
+    {
+        printf("stack is empty");
+    }
+    else
+    {
+       for(int i=top;i>=0;i--)
+       {
+           printf("%c\n",stack[i]);
+       }
+    }
+}
+```
 
 Output:
 
 //paste your output here
+<img width="848" height="627" alt="image" src="https://github.com/user-attachments/assets/b0e14267-a38d-4a83-b417-0d4ae580046a" />
 
 
 
@@ -37,8 +58,25 @@ Algorithm:
 Program:
 
 //type your code here
+```
+char stack[100];
+int size=3,top=-1;
+void push (char data)
+{
+    if(top==size-1)
+    {
+        printf("stack is full\n");
+    }
+    else
+    {
+        stack[++top]=data;
+    }
+}
+```
 
 Output:
+<img width="854" height="663" alt="image" src="https://github.com/user-attachments/assets/ea3821cb-9f5b-406b-9b74-efd8ed2c1896" />
+
 
 //paste your output here
 
@@ -63,11 +101,29 @@ Algorithm:
 Program:
 
 //type your code here
-
+```
+char queue[50];
+int front ,rear,size;
+void display()
+{
+    if(front==-1)
+    {
+        printf("No elements to display");
+    }
+    else
+    {
+        for(int i=front;i<=rear;i++)
+        {
+            printf("%c ",queue[i]);
+        }
+    }
+}
+```
 Output:
 
 //paste your output here
 
+<img width="896" height="675" alt="image" src="https://github.com/user-attachments/assets/830f68c1-b3c7-4902-b874-4d6e4019c682" />
 
 Result:
 Thus, the program to display queue elements using array is verified successfully.
@@ -85,12 +141,28 @@ Algorithm:
 4.	Call the enqueue function as needed.
 
 Program:
+```
+#include<stdio.h>
 
+#define SIZE 50
+float queue[SIZE];
+int front,rear;
+void enqueue(float data)
+{
+    if (rear == SIZE - 1) {
+        printf("Queue Overflow\n");
+    } else {
+        if (front == -1) front = 0;  // first insertion
+        queue[++rear] = data;
+    }
+}
+```
 //type your code here
 
 Output:
 
 //paste your output here
+
 
 Result:
 Thus, the program to insert elements in queue using array is verified successfully.
@@ -122,11 +194,19 @@ o	After deletion, check if the front pointer has passed the rear pointer (front 
 Program:
 
 //type your code here
+```
+int front, rear;
+void dequeue()
+{
+    front++;
+}
+```
 
 Output:
 
 //paste your output here
 
+<img width="846" height="773" alt="image" src="https://github.com/user-attachments/assets/5baa6d96-fb0a-4d38-b6dc-00c37b86c4c6" />
 
 Result:
 Thus, the function that deletes an element from a queue implemented using an array is verified successfully.
