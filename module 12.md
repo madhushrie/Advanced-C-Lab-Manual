@@ -16,10 +16,42 @@ Algorithm:
 Program:
 
 //type your code here
+```
+#include <stdio.h>
+#include <stdlib.h>
+
+
+struct Node {
+    int data;
+    struct Node* next;
+};
+
+struct Node* head = NULL; 
+void stackPush(int value) {
+    struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+    newNode->data = value;
+    newNode->next = head;
+    head = newNode;
+}
+
+void display() {
+    struct Node* temp = head;
+    if (temp == NULL) {
+        printf("Stack is empty\n");
+        return;
+    }
+    while (temp != NULL) {
+        printf("%d\n", temp->data);
+        temp = temp->next;
+    }
+}
+```
 
 Output:
 
 //paste your output here
+<img width="715" height="564" alt="image" src="https://github.com/user-attachments/assets/0dee6c39-c1db-4a4b-9b91-b9e67393808d" />
+
 
 
 Result:
@@ -41,10 +73,35 @@ Algorithm:
 Program:
 
 //type your code here
+```
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Node {
+    char data;
+    struct Node* next;
+};
+
+struct Node* head = NULL; 
+void pop() {
+    if (head == NULL) {
+        printf("stack is empty");
+        return;
+    }
+    struct Node* temp = head;
+    head = head->next;
+    free(temp);
+}
+
+
+
+```
 
 Output:
 
 //paste your output here
+<img width="1046" height="610" alt="image" src="https://github.com/user-attachments/assets/3295bc84-bda0-4628-82a9-ed0b5d71eeb5" />
+
 
 
 
@@ -65,10 +122,40 @@ Algorithm:
 Program:
 
 //type your code here
+```
+#include <stdio.h>
+#include <stdlib.h>
+
+
+struct Node {
+    char data;
+    struct Node* next;
+};
+
+struct Node* front = NULL;
+struct Node* rear = NULL;
+
+void display() {
+    struct Node* temp = front;
+
+    if (temp == NULL) {
+        printf("queue is empty\n");
+        return;
+    }
+
+    printf("queue elements:\n");
+    while (temp != NULL) {
+        printf("%c\n", temp->data);
+        temp = temp->next;
+    }
+}
+```
 
 Output:
 
 //paste your output here
+<img width="757" height="547" alt="image" src="https://github.com/user-attachments/assets/8a702681-4439-49b6-b2fb-9ce88d745bbc" />
+
 
 Result:
 Thus, the program to display queue elements using linked list is verified successfully.
@@ -89,12 +176,37 @@ Algorithm:
 6.	End of Enqueue Operation
  
 Program:
-
+```
+struct Node
+{
+   float data;
+   struct Node *next;
+}*front=NULL,*rear=NULL;
+void enqueue(float data)
+{
+    struct Node *n;
+    n=(struct Node *)malloc(sizeof(struct Node));
+    n->data=data;
+    n->next=NULL;
+    if(front==NULL && rear==NULL)
+    {
+        front=rear=n;
+    }
+    else
+    {
+        
+        rear->next=n;
+        rear=n;
+    }
+}
+```
 //type your code here
 
 Output:
 
 //paste your output here
+<img width="742" height="554" alt="image" src="https://github.com/user-attachments/assets/3e692bf3-001b-4d1e-a041-4b0319851c9a" />
+
 
 Result:
 Thus, the program to insert elements in queue using linked list is verified successfully.
@@ -118,12 +230,31 @@ o	If the queue is not empty, return the data stored in the front node of the lin
 Program:
 
 //type your code here
+```
+struct Node
+{
+   int data;
+   struct Node *next;
+}*front=NULL,*rear=NULL;
+void peek()
+{
+    if(front==NULL)
+    {
+        printf("Queue is empty\n");
+    }
+    else
+    {
+        printf("%d\n",front->data);
+    }
+}
+```
 
 Output:
 
 //paste your output here
 
 
+<img width="671" height="567" alt="image" src="https://github.com/user-attachments/assets/e2fe17ce-5db1-4c07-91c3-e5004e0abb31" />
 
 Result:
 
